@@ -1,0 +1,12 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chainbreaker-lab-divy/cb-ci-toolkit@v2
+      - run: echo "deploy (demo)"
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
